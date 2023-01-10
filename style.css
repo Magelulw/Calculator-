@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&family=Raleway:wght@400;700&family=Roboto+Slab:wght@800&family=Source+Sans+Pro:wght@600&display=swap');
+
 *,::before,::after{
     margin:0;
     padding:0;
@@ -14,4 +16,42 @@ body{
     width: 30rem;
     height: 40rem;
     margin:0 auto;
+    padding:2rem;
+
 }
+
+.containerResult{
+    border: 1px solid rgb(83, 25, 25);
+    text-align: right;
+
+    height:3.5rem;
+}
+
+.containerDelete{
+    margin-top: 1rem;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap:1rem;
+
+}
+
+.containerDelete button{
+    font-size: 1.5rem;
+    padding:0.5rem;
+    font-family: 'Raleway', sans-serif;
+    font-weight: bold;
+    border: 2px solid black;
+    border-radius: 4px;
+
+}
+
+.clearAll{
+    background-color: lightcoral;
+}
+
+.deleteNumber{
+    background-color: lightblue;
+}
+
+
+
