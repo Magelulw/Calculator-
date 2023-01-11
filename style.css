@@ -7,24 +7,41 @@
 }
 
 body{
+    margin-top: 5rem;
+
     height: 100vh;
     width: 100%;
 }
 
 .container{
-    border: 1px solid black;
+    border: 2px solid black;
+    border-radius: 4px;
+
     width: 30rem;
     height: 40rem;
     margin:0 auto;
     padding:2rem;
 
+    background-color: rgb(175, 175, 175);
 }
 
 .containerResult{
-    border: 1px solid rgb(83, 25, 25);
     text-align: right;
 
-    height:3.5rem;
+    padding:0.5rem 1rem 1rem 1rem;
+
+    height:5.5rem;
+
+    border: 2px solid black;
+    border-radius: 4px;
+
+    background-color: aliceblue;
+
+    font-family: 'Roboto Slab', serif;
+    font-size: 1.4rem;
+}
+.containerResult .result{
+    font-size: 2rem;
 }
 
 .containerDelete{
@@ -43,15 +60,42 @@ body{
     border: 2px solid black;
     border-radius: 4px;
 
+    height: 4rem;
+
 }
 
 .clearAll{
     background-color: lightcoral;
 }
+.clearAll:hover{
+    background-color: rgb(250, 158, 158);
 
+}
 .deleteNumber{
     background-color: lightblue;
 }
+.deleteNumber:hover{
+    background-color: rgb(183, 246, 260);
+}
 
+.containerEquations{
+    margin-top:2rem;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap:0.5rem;
+}
 
+.containerEquations button{
+    height:5.5rem;
+    width:6rem;
 
+    font-family: 'Roboto Slab', serif;
+    font-size: 1.5rem;
+
+    border: 2px solid black;
+    border-radius: 4px;
+}   
+
+.containerEquations button:hover{
+    background-color: aliceblue;
+}
