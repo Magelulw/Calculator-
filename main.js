@@ -14,5 +14,13 @@ function divide(a,b){
 }
 
 function operate(num1,num2){
-
+    
 }
+
+const buttons = document.querySelectorAll("button");
+
+buttons.forEach(button => {
+  button.addEventListener("click", event => {
+    console.log(event.target.value);
+  });
+});
