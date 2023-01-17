@@ -1,6 +1,21 @@
 //* calculation display
 const calculation = document.querySelector(".calculation")
-calculation.textContent += []
+const buttons = document.querySelectorAll("button");
+
+const clear = document.querySelector(".clearAll")
+const deleteValue = document.querySelector(".deleteNumber")
+
+calculation.textContent = []
+
+function getDigits(){
+    buttons.forEach(button => {
+        button.addEventListener("click", event => {
+            console.log(event.target)
+          calculation.textContent += event.target.value;
+        });
+      });
+}
+
 
 
 function add(a,b){
@@ -16,23 +31,21 @@ function divide(a,b){
     return a / b
 }
 
-function operate(num1,num2){
-    return calculation.map(value =>{
-        if(calculation.value.includes("1")){
-            console.log("hello")
-        }
-    })
 
+function operate(){
+    getDigits()
 }
 
+function clearAll(){
+    calculation.textContent = ""
+}
 
-const buttons = document.querySelectorAll("button");
+clear.addEventListener("click",clearAll)
 
-buttons.forEach(button => {
-    button.addEventListener("click", event => {
-      calculation.textContent += event.target.value;
-    });
-  });
+deleteValue.addEventListener("click",() =>{
+    calculation.textContent.split("").reverse().join("")
+})
+
 
 
 operate()
