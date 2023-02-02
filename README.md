@@ -1,38 +1,45 @@
 # Calculator🐉
-This is a calculator that I created with HTML, CSS and Js
+const calculationText = document.querySelector(".calculation");
+console.log(calculationText)
+const buttons = document.querySelectorAll("button");
 
+const clear = document.querySelector(".clearAll");
+const deleteValue = document.querySelector(".deleteNumber");
 
-function getDigits(){
-    buttons.forEach(button => {
-        button.addEventListener("click", event => {
-            calculation.push(event.target.value)
-            calculationText.textContent = calculation.join("")
-        });
-      });
+let calculation = [];
+let calculationValue = 0;
+
+buttons.onclick = (value) => 
+
+function evaluateThrough() {
+    let newCalculation = [];
+
+    buttons.forEach((button) => {
+        button.onclick = (event) => {
+            newCalculation.push(event.target.value);
+            calculationText.textContent = newCalculation.join("");
+            calculation = newCalculation;
+            calculationValue = newCalculation.join("");
+            console.log(calculation);
+        };
+    });
 }
 
-
-
-
-function add(a,b){
-    return a + b
-}
-function subtract(a,b){
-    return a - b
-}
-function multiply(a,b){
-    return a * b
-}
-function divide(a,b){
-    return a / b
+function operate() {
+    evaluateThrough();
+    if (String(calculationValue).includes("4")) {
+        console.log("red");
+    }
+    return calculationValue;
 }
 
-
-function operate(num1,num2){
-    getDigits()
+//! clears all
+function clearAll() {
+    calculation = [];
+    calculationValue = 0;
+    calculationText.textContent = "0";
 }
 
+clear.addEventListener("click", clearAll);
 
-function deleteNumber(arr){
-    arr.split("")
-}
+operate();
