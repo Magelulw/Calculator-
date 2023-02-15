@@ -43,3 +43,26 @@ function clearAll() {
 clear.addEventListener("click", clearAll);
 
 operate();
+
+
+
+
+
+
+
+
+
+const array = document.querySelector(".array")
+const deleteLast = document.querySelector(".deleteLast")
+
+let calc = [11233]
+let people = ["james","harry","lewis"]
+
+// people.pop()
+// console.log(people)
+
+array.textContent = people
+deleteLast.addEventListener("click",() =>{
+    people.pop()
+    array.textContent = people
+})
