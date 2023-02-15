@@ -52,30 +52,3 @@ operate();
 
 
 
-const number2 = document.querySelector(".number2")
-const number4 = document.querySelector(".number4")
-const displayText = document.querySelector(".display")
-const deleteDigit = document.querySelector(".delete")
-
-let text = []
-displayText.textContent = 0
-
-
-number2.addEventListener("click",(e) => {
-    text.push(e.target.value)
-    displayText.textContent = text.join("")
-})
-
-number4.addEventListener("click",(e) =>{
-    text.push(e.target.value)
-    displayText.textContent = text.join("")
-})
-
-deleteDigit.addEventListener("click",() =>{
-
-    console.log(text)
-
-    text.pop()
-    displayText.textContent = text.join("")
-
-})
