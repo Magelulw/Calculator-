@@ -55,14 +55,15 @@ operate();
 const array = document.querySelector(".array")
 const deleteLast = document.querySelector(".deleteLast")
 
-let calc = [11233]
-let people = ["james","harry","lewis"]
+let calc = [1,1,2,1,9]
 
-// people.pop()
-// console.log(people)
 
-array.textContent = people
+let people = ["james","harry","lewis","gabriel"]
+
+array.textContent = calc.join("")
 deleteLast.addEventListener("click",() =>{
-    people.pop()
-    array.textContent = people
+
+
+    calc.pop()
+    array.textContent = calc.join("")
 })
