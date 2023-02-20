@@ -1,11 +1,17 @@
-//! selecting clear and delete Button
+//?=================================
+//* selecting clear & delete Button
+//?=================================
 const clearAllBtn = document.querySelector(".clearAll");
 const deleteNumberBtn = document.querySelector(".deleteNumber");
 
-//!display text
+//?==================
+//! display text
+//?==================
 const resultDisplay = document.querySelector(".containerResult");
 
-//!targeting all numbers:
+//?========================
+//* targeting all numbers:
+//?========================
 const number1 = document.querySelector(".number1");
 const number2 = document.querySelector(".number2");
 const number3 = document.querySelector(".number3");
@@ -15,7 +21,8 @@ const number6 = document.querySelector(".number6");
 const number7 = document.querySelector(".number7");
 const number8 = document.querySelector(".number8");
 const number9 = document.querySelector(".number9");
-const number0 = document.querySelector(".number0")
+const number0 = document.querySelector(".number0");
+const decimalPoint = document.querySelector(".decimalPoint");
 
 
 function pushValue(e){
@@ -23,6 +30,19 @@ function pushValue(e){
     resultDisplay.textContent = calculation.join("")
 }
 
+//?========================
+//! calculation symbols
+//?========================
+const divisionSymbol = document.querySelector(".division");
+const multiplicationSymbol = document.querySelector(".multiplication");
+const addSymbol = document.querySelector(".addition");
+const subtractionSymbol = document.querySelector(".subtraction");
+const showEndResult = document.querySelector(".calculatedResult");
+
+
+function caseScenarios(){
+    
+}
 //?==================
 //* onclick events
 //?==================
@@ -36,6 +56,7 @@ number7.onclick = (e) => pushValue(e)
 number8.onclick = (e) => pushValue(e)
 number9.onclick = (e) => pushValue(e)
 number0.onclick = (e) => pushValue(e)
+decimalPoint.onclick = (e) => pushValue(e)
 
 //?==================
 //* delete & clear
