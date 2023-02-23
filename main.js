@@ -28,6 +28,8 @@ const decimalPoint = document.querySelector(".decimalPoint");
 function pushValue(e){
     calculation.push(e.target.value)
     resultDisplay.textContent = calculation.join("")
+
+    operation()
 }
 
 //?========================
@@ -40,9 +42,6 @@ const subtractionSymbol = document.querySelector(".subtraction");
 const showEndResult = document.querySelector(".calculatedResult");
 
 
-function caseScenarios(){
-    
-}
 //?==================
 //* onclick events
 //?==================
@@ -57,6 +56,12 @@ number8.onclick = (e) => pushValue(e)
 number9.onclick = (e) => pushValue(e)
 number0.onclick = (e) => pushValue(e)
 decimalPoint.onclick = (e) => pushValue(e)
+
+addSymbol.onclick = (e) => pushValue(e)
+divisionSymbol.onclick = (e) => pushValue(e)
+multiplicationSymbol.onclick = (e) => pushValue(e)
+subtractionSymbol.onclick = (e) => pushValue(e)
+showEndResult.onclick = (e) => pushValue(e)
 
 //?==================
 //* delete & clear
@@ -79,13 +84,53 @@ function deleteLastNumber(){
     resultDisplay.textContent = calculation.join("")
 }
 
+//?==================
+//* operations
+//?==================
+
+function add(a,b){
+    return a + b
+}
+
+function subtract(a,b){
+    return a - b
+}
+
+function multiply(a,b){
+    return a * b
+}
+
+function divide(a,b){
+    return a / b
+}
 
 
+
+function operation(operator, a, b){
+    a = Number(a)
+    b = Number(b)
+
+    switch(operator) {
+        case "+":
+            return add(a,b)
+        case "-":
+            return subtract(a,b)
+        case "*":
+            return multiply(a,b)
+        case "/":
+            return divide(a,b)
+        default:
+            return null
+    }
+}
+
+//?==================
+//* run calculation
+//?==================
 
 function runCalc(){
     clearAll()
     deleteLastNumber()
-    
 };
 
 runCalc()
