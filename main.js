@@ -25,13 +25,6 @@ const number0 = document.querySelector(".number0");
 const decimalPoint = document.querySelector(".decimalPoint");
 
 
-function pushValue(e){
-    calculation.push(e.target.value)
-    resultDisplay.textContent = calculation.join("")
-
-    operation()
-}
-
 //?========================
 //! calculation symbols
 //?========================
@@ -62,6 +55,45 @@ divisionSymbol.onclick = (e) => pushValue(e)
 multiplicationSymbol.onclick = (e) => pushValue(e)
 subtractionSymbol.onclick = (e) => pushValue(e)
 showEndResult.onclick = (e) => pushValue(e)
+
+
+function pushValue(e){
+    const value = e.target.value;
+
+    if(value == "+" || value == "-" || value == "*" || value == "/"){
+        const operator = value
+
+        const operand1 = calculation.join("")
+
+        calculation = []
+
+        resultDisplay.textContent = operand1
+
+        currentOperation = {
+            operator,
+            operand1
+        };
+
+    }        
+    else{
+        calculation.push(value)
+        resultDisplay.textContent = calculation.join("")
+    }
+}
+
+showEndResult.onclick = (e) => {
+    const operand2 = calculation.join("");
+
+    if(currentOperation && currentOperation.operator && currentOperation.operand1){
+        const result = operation(currentOperation.operator, currentOperation.operand1, operand2)
+
+            resultDisplay.textContent = result
+            calculation = []
+            currentOperation.operand1 = result
+    }
+}
+
+
 
 //?==================
 //* delete & clear
@@ -141,6 +173,11 @@ function operation(operator, a, b){
 function runCalc(){
     clearAll()
     deleteLastNumber()
+
+    currentOperation = {
+        operator: null,
+        operand1: null
+    };
 };
 
 runCalc()
