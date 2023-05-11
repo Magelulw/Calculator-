@@ -80,13 +80,23 @@ function clearAll(){
 };
 
 function deleteLastNumber(){
-    calculation.pop()
-    resultDisplay.textContent = calculation.join("")
+    if(calculation.length == 1 ){
+        resultDisplay.textContent = "0"
+    }
+    else{
+        calculation.pop()
+        resultDisplay.textContent = calculation.join("")
+    }
+
+    
 }
+
 
 //?==================
 //* operations
 //?==================
+
+// !I want to implement these functions
 
 function add(a,b){
     return a + b
